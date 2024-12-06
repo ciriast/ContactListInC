@@ -5,11 +5,12 @@
 // I'll use a FILE structure to store the file returned by fopen
 // It was really fun to learn about paths in linux
 // There are differents modes to open a file. "r" for read
+// "r+" To read a file and also be able to write
 int main() {
     FILE* config_file;
     char file_content[256];
 
-    config_file = fopen("yourpath", "r");
+    config_file = fopen("yourpath", "r+");
 
     if (config_file == NULL) {
         printf("The file couldn't be open\n");
@@ -27,7 +28,12 @@ int main() {
 
         printf("%s\n", file_content);
     }
+    
+    // Process to insert a line in the file.
+    char new_content[6] = "Hello";
+    fputs(new_content, config_file);
 
+    printf("The file has been written\n");
     fclose(config_file);
 
     return 0;
