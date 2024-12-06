@@ -6,7 +6,7 @@
 // There are differents modes to open a file. "r" for read
 int main() {
     FILE* config_file;
-    char* file_content;
+    char file_content[256];
 
     config_file = fopen("yourpath", "r");
 
@@ -18,9 +18,9 @@ int main() {
 
     printf("Hello from my contacts list app!\n");
     
-    while(!feof(config_file)) {
-        fgets(file_content, 256, config_file);
-        printf("%s\n", file_content);
+    while(fgets(file_content, 256, config_file)) {
+        if (file_content != "\n")
+            printf("%s\n", file_content);
     }
 
     fclose(config_file);
