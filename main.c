@@ -30,8 +30,12 @@ int main() {
     }
     
     // Process to insert a line in the file.
-    char new_content[6] = "Hello";
-    fputs(new_content, config_file);
+    char user_message[256];
+
+    printf("Insert the text to the file\n");
+    fgets(user_message, 256, stdin);
+
+    fputs(user_message, config_file);
 
     printf("The file has been written\n");
     fclose(config_file);
