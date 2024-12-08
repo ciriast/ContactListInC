@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 
+struct contact {
+    char name[256];
+    char lastName[256];
+    char phone_number[100];
+};
+
 // Seems that from the standard library I can open files
 // I'll use a FILE structure to store the file returned by fopen
 // It was really fun to learn about paths in linux
