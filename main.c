@@ -36,7 +36,7 @@ int main() {
     fgets(user_message, 256, stdin);
 
     fputs(user_message, config_file);
-
+    fputs("\0", config_file);
     printf("The file has been written\n");
     fclose(config_file);
 
