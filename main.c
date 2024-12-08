@@ -3,7 +3,7 @@
 
 struct contact {
     char name[256];
-    char lastName[256];
+    char last_name[256];
     char phone_number[100];
 };
 
@@ -37,12 +37,20 @@ int main() {
     
     // Process to insert a line in the file.
     char user_message[256];
+    struct contact user_contact;
 
-    printf("Insert the text to the file\n");
-    fgets(user_message, 256, stdin);
+    printf("Insert the contact first name:\n");
+    fgets(user_contact.name, 256, stdin);
 
-    fputs(user_message, config_file);
-    fputs("\0", config_file);
+    printf("Insert the contact last name:\n");
+    fgets(user_contact.last_name, 256, stdin);
+
+    printf("Insert the contact phone number:\n");
+    fgets(user_contact.phone_number, 100, stdin);
+
+    printf("Contact first name: %s\n", user_contact.name);
+    //fputs(user_message, config_file);
+    //fputs("\0", config_file);
     printf("The file has been written\n");
     fclose(config_file);
 
