@@ -12,6 +12,7 @@ struct contact {
 // It was really fun to learn about paths in linux
 // There are differents modes to open a file. "r" for read
 // "r+" To read a file and also be able to write
+// Cheking how to parse a json in c
 int main() {
     FILE* config_file;
     char file_content[256];
