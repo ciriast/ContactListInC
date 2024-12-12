@@ -15,6 +15,7 @@ struct contact {
 // Cheking how to parse a json in c
 // Continue reviewing
 // I'm sick
+// I'm still sick
 int main() {
     FILE* config_file;
     char file_content[256];
