@@ -16,6 +16,7 @@ struct contact {
 // Continue reviewing
 // I'm sick
 // I'm still sick
+// A fucking week, man
 int main() {
     FILE* config_file;
     char file_content[256];
