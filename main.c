@@ -21,6 +21,7 @@ struct contact {
 // Tomorrow will be the day
 // I'm back baby
 // Seems that I can't read json natively with C, so, I'll search for a different format
+// I'll work with a csv file
 int main() {
     FILE* config_file;
     char file_content[256];
