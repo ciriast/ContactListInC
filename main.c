@@ -19,6 +19,8 @@ struct contact {
 // A fucking week, man
 // well...
 // Tomorrow will be the day
+// I'm back baby
+// Seems that I can't read json natively with C, so, I'll search for a different format
 int main() {
     FILE* config_file;
     char file_content[256];
