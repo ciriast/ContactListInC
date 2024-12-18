@@ -26,7 +26,7 @@ int main() {
     FILE* config_file;
     char file_content[256];
 
-    config_file = fopen("yourpath", "r+");
+    config_file = fopen("yourpath.csv", "r+");
 
     if (config_file == NULL) {
         printf("The file couldn't be open\n");
@@ -57,10 +57,29 @@ int main() {
 
     printf("Insert the contact phone number:\n");
     fgets(user_contact.phone_number, 100, stdin);
+   
+    // Make sure to remove the \n of the strings
+    size_t user_name_size = strlen(user_contact.name) - 1;
+    size_t user_last_name_size = strlen(user_contact.last_name) - 1;
+    size_t user_phone_number_size = strlen(user_contact.phone_number) - 1;
+
+    if (user_contact.name[user_name_size] == '\n')
+        user_contact.name[user_name_size] = '\0';
+
+    if (user_contact.last_name[user_last_name_size] == '\n')
+        user_contact.last_name[user_last_name_size] = '\0';
+
+    if (user_contact.phone_number[user_phone_number_size] == '\n')
+        user_contact.phone_number[user_phone_number_size] = '\0';
+
+    strcat(user_contact.name, ",");
+    strcat(user_contact.name, user_contact.last_name);
+    strcat(user_contact.name, ",");
+    strcat(user_contact.name, user_contact.phone_number);
 
     printf("Contact first name: %s\n", user_contact.name);
-    //fputs(user_message, config_file);
-    //fputs("\0", config_file);
+    fputs(user_contact.name, config_file);
+    fputs("\0", config_file);
     printf("The file has been written\n");
     fclose(config_file);
 
