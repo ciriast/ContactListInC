@@ -35,14 +35,33 @@ int main() {
     }
 
     printf("Contacts list app!\n");
-    
+    printf("Contacts:\n");
+
     while(fgets(file_content, 256, config_file)) {
         size_t new_line = strlen(file_content) - 1;
         
         if(file_content[new_line] == '\n')
             file_content[new_line] = '\0';
 
-        printf("%s\n", file_content);
+        int first_comma = 0;
+        int second_comma = 0;
+
+        for(int i = 0; i < new_line; ++i) {
+
+            if (file_content[i] == ',') {
+                if (first_comma != 0 && second_comma == 0)
+                    second_comma = i;
+
+                if (first_comma == 0)
+                    first_comma = i;
+            }
+        }
+        
+        char list_first_name [256];
+
+        strncpy(list_first_name, file_content, first_comma);
+
+        printf("%s\n", list_first_name);
     }
     
     // Process to insert a line in the file.
