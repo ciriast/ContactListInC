@@ -20,7 +20,7 @@ struct contact {
 // well...
 // Tomorrow will be the day
 // I'm back baby
-// Seems that I can't read json natively with C, so, I'll search for a different format
+// Seems that I can't parse a json natively with C, so, I'll search for a different format
 // I'll work with a csv file
 int main() {
     FILE* config_file;
@@ -34,7 +34,7 @@ int main() {
         return 0;
     }
 
-    printf("Hello from my contacts list app!\n");
+    printf("Contacts list app!\n");
     
     while(fgets(file_content, 256, config_file)) {
         size_t new_line = strlen(file_content) - 1;
@@ -77,10 +77,9 @@ int main() {
     strcat(user_contact.name, ",");
     strcat(user_contact.name, user_contact.phone_number);
 
-    printf("Contact first name: %s\n", user_contact.name);
     fputs(user_contact.name, config_file);
     fputs("\0", config_file);
-    printf("The file has been written\n");
+    printf("A contact has been written\n");
     fclose(config_file);
 
     return 0;
