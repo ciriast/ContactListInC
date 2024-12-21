@@ -23,6 +23,7 @@ struct contact {
 // Seems that I can't parse a json natively with C, so, I'll search for a different format
 // I'll work with a csv file
 // A little break today
+// Another break
 int main() {
     FILE* config_file;
     char file_content[256];
