@@ -59,15 +59,16 @@ int main() {
             }
         }
         
-        char list_first_name [256];
+        char list_first_name [256] = "";
         char list_last_name [256] = "";
-        char list_phone_number [100];
+        char list_phone_number [100] = "";
 
         int result = second_comma - first_comma;
         strncpy(list_first_name, file_content, first_comma);
         strncpy(list_last_name, file_content + first_comma + 1, result - 1);
+        strncpy(list_phone_number, file_content + second_comma + 1, new_line);
 
-        printf("%s\n", list_last_name);
+        printf("%s\n", list_phone_number);
 
     }
     
