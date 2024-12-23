@@ -60,17 +60,15 @@ int main() {
         }
         
         char list_first_name [256];
-        char list_last_name [256];
+        char list_last_name [256] = "";
         char list_phone_number [100];
 
         int result = second_comma - first_comma;
         strncpy(list_first_name, file_content, first_comma);
         strncpy(list_last_name, file_content + first_comma + 1, result - 1);
 
-        printf("%s\n", list_first_name);
+        printf("%s\n", list_last_name);
 
-        first_comma = 0;
-        second_comma = 0;
     }
     
     // Process to insert a line in the file.
