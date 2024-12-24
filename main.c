@@ -24,6 +24,7 @@ struct contact {
 // I'll work with a csv file
 // A little break today
 // Another break
+// I don't know if I'll program today
 int main() {
     FILE* config_file;
     char file_content[256];
