@@ -63,13 +63,20 @@ int main() {
         char list_first_name [256] = "";
         char list_last_name [256] = "";
         char list_phone_number [100] = "";
+        char complete_contact_info [612] = "";
 
         int result = second_comma - first_comma;
         strncpy(list_first_name, file_content, first_comma);
         strncpy(list_last_name, file_content + first_comma + 1, result - 1);
         strncpy(list_phone_number, file_content + second_comma + 1, new_line);
 
-        printf("%s\n", list_phone_number);
+        strcat(complete_contact_info, list_first_name);
+        strcat(complete_contact_info, " ");
+        strcat(complete_contact_info, list_last_name);
+        strcat(complete_contact_info, " - ");
+        strcat(complete_contact_info, list_phone_number);
+
+        printf("%s\n", complete_contact_info);
 
     }
     
