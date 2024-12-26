@@ -40,6 +40,7 @@ int main() {
     printf("Contacts list app!\n");
     printf("Contacts:\n");
 
+    // Let's start the search process
     while(fgets(file_content, 256, config_file)) {
         size_t new_line = strlen(file_content) - 1;
         
@@ -77,7 +78,6 @@ int main() {
         strcat(complete_contact_info, list_phone_number);
 
         printf("%s\n", complete_contact_info);
-
     }
     
     // Process to insert a line in the file.
