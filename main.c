@@ -25,6 +25,7 @@ struct contact {
 // A little break today
 // Another break
 // I don't know if I'll program today
+// Last day of the year
 int main() {
     FILE* config_file;
     char file_content[256];
