@@ -42,6 +42,13 @@ int main() {
     printf("Contacts:\n");
 
     // Let's start the search process
+    char search_input[256] = "";
+
+    printf("Insert the contact name or contact last name\n");
+    fgets(search_input, 256, stdin);
+
+    printf("You searched: %s\n", search_input);
+
     while(fgets(file_content, 256, config_file)) {
         size_t new_line = strlen(file_content) - 1;
         
