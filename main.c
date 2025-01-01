@@ -26,6 +26,7 @@ struct contact {
 // Another break
 // I don't know if I'll program today
 // Last day of the year
+// I'll be programming each day of the 2025!
 int main() {
     FILE* config_file;
     char file_content[256];
