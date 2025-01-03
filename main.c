@@ -12,20 +12,8 @@ struct contact {
 // It was really fun to learn about paths in linux
 // There are differents modes to open a file. "r" for read
 // "r+" To read a file and also be able to write
-// Cheking how to parse a json in c
-// Continue reviewing
-// I'm sick
-// I'm still sick
-// A fucking week, man
-// well...
-// Tomorrow will be the day
-// I'm back baby
 // Seems that I can't parse a json natively with C, so, I'll search for a different format
 // I'll work with a csv file
-// A little break today
-// Another break
-// I don't know if I'll program today
-// Last day of the year
 // I'll be programming each day of the 2025!
 int main() {
     FILE* config_file;
