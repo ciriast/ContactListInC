@@ -38,6 +38,11 @@ int main() {
 
     printf("You searched: %s\n", search_input);
 
+    // While for the search process
+    while(fgets(file_content, 256, config_file)) {
+        printf("%s", file_content);
+    }
+
     while(fgets(file_content, 256, config_file)) {
         size_t new_line = strlen(file_content) - 1;
         
