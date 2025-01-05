@@ -83,3 +83,50 @@ int main() {
 
     return 0;
 }
+
+int showContacts() {
+    FILE* config_file;
+    char file_content[256];
+
+   while(fgets(file_content, 256, config_file)) {
+       size_t new_line = strlen(file_content) - 1;
+
+       if(file_content[new_line] == '\n')
+           file_content[new_line] = '\0';
+
+       int first_comma = 0;
+       int second_comma = 0;
+
+      for(int i = 0; i < new_line; ++i) {
+
+          if (file_content[i] == ',') {
+              if (first_comma != 0 && second_comma == 0)
+                  second_comma = i;
+
+              if (first_comma == 0)
+                  first_comma = i;
+          }
+      }
+
+      char list_first_name [256] = "";
+      char list_last_name [256] = "";
+      char list_phone_number [100] = "";
+      char complete_contact_info [612] = "";
+
+      int result = second_comma - first_comma;
+      strncpy(list_first_name, file_content, first_comma);
+      strncpy(list_last_name, file_content + first_comma + 1, result - 1);
+      strncpy(list_phone_number, file_content + second_comma + 1, new_line);
+
+      strcat(complete_contact_info, list_first_name);
+      strcat(complete_contact_info, " ");
+      strcat(complete_contact_info, list_last_name);
+      strcat(complete_contact_info, " - ");
+      strcat(complete_contact_info, list_phone_number);
+
+      printf("%s\n", complete_contact_info);
+    }
+      fclose(config_file);
+
+      return 0;
+}
