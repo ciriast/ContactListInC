@@ -16,7 +16,6 @@ struct contact {
 // I'll work with a csv file
 // I'll be programming each day of the 2025!
 // Ok, Sunday January 5 is hard.
-// Tomorrow
 int main() {
     FILE* config_file;
     char file_content[256];
