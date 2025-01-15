@@ -15,7 +15,6 @@ struct contact {
 // Seems that I can't parse a json natively with C, so, I'll search for a different format
 // I'll work with a csv file
 // I'll be programming each day of the 2025!
-// Ok, Sunday January 5 is hard.
 int main() {
     FILE* config_file;
     char file_content[256];
@@ -42,7 +41,8 @@ int main() {
 
     // While for the search process
     while(fgets(file_search_content, 1900, config_file)) {
-        printf("%s", file_search_content);
+        if (strstr(file_search_content, search_input) == 0)
+            printf("%s\n", "Yes!");
     }
 
     // Process to insert a line in the file.
